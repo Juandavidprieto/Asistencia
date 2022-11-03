@@ -3,17 +3,20 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family:'Segoe UI', sans-serif
+    font-family:'Segoe UI', sans-serif;
+    
+    
 }
 body{
     overflow: hidden;
+    
 }
 section{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #FFB74D, #FFB74D );
+    background: #FB8C00;
 }
 section .color{
     position: absolute;
@@ -215,3 +218,5 @@ div{
 	height: 500px;
 	width: 500px;
 }
+
+ }
