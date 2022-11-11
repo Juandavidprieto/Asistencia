@@ -10,10 +10,6 @@
 </head>
 <body>
     <section>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
     <div class="container">
        <div class="tittle">Registro de usuario</Ri:a></div>
           <form th:action="@{/aprendiz/guardar}" th:object="${aprendiz}" method="POST">
@@ -32,7 +28,7 @@
                 </div>
                 <div class="input-box">
                     <span class="details">Programa</span>
-                    <input th:field="*{programa} " type="text" placeholder="Ingresa el programma" required>
+                    <input th:field="*{programa} " type="text" placeholder="Ingresa el programa" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Ficha</span>

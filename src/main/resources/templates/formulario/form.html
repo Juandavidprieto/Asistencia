@@ -12,11 +12,9 @@
 </head>
 <body>
 	<section>
-        
             <div class="container">
                 <div class="form">
-                    <img src="logosena.png" alt="">
-                    <h2> ASISTENCIA</h2>
+                    <h2> Asistencia</h2>
                         <form th:action="@{/formulario/save}" th:object="${formulario}" method="POST">
                             <div class="inputBox">
                                 <select class="form-control" th:field="*{aprendices}">

@@ -15,15 +15,15 @@
 <body>
  	<input type="checkbox" id="check">
     <!--header area start-->
-    <header>
+    <header> 
       <label for="check">
         <i class="fas fa-bars" id="sidebar_btn"></i>
       </label>
       <div class="logo">
-      	<img  src="../img/LogoGrandeBlanco.png"  alt="logosena">
+       <img  src="../img/LogoGrandeBlanco.png"  alt="logosena">
      </div>
       <div class="right_area">
-        <a th:href="@{/cerrar}" class="logout_btn btn btn-primary"><i class="fas fa-sign-out-alt"></i>Salir</a>
+        <a th:href="@{/cerrar}" class="logout_btn"><i class="fas fa-sign-out-alt"></i>Salir</a>
       </div>
     </header>
     <!--header area end-->
@@ -57,10 +57,6 @@
       <div class="card">
         
         <section>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
     <div class="containers">
         <div class="tittle">Registro de usuario</Ri:a></div>
           <form th:action="@{/admin/save}" th:object="${usuario}" method="POST" enctype="multipart/form-data">

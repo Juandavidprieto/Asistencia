@@ -13,7 +13,7 @@ body{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	box-shadow: 5px 5px 10px #999;
+	box-shadow: 5px 5px 10px #424242;
 	border-radius: 15px;
 	display: flex;
 	flex-direction: column;
@@ -24,7 +24,7 @@ body{
 	
 	width: 300px;
 	height: 300px;
-	border: 10px solid #f88c34 ;
+	border: 10px solid #558B2F ;
 	
 }
 .user img{
@@ -34,7 +34,7 @@ body{
 	
 }
 .qr {
-border-bottom: 3px solid #f88c34 ;
+border-bottom: 3px solid #558B2F;
 
 }
 .qr h3{

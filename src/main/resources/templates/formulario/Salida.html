@@ -17,14 +17,15 @@
  	<input type="checkbox" id="check">
     <!--header area start-->
     <header>
+   
       <label for="check">
         <i class="fas fa-bars" id="sidebar_btn"></i>
-      </label>
-      <div class="logo">
-      	<img  src="../img/LogoGrandeBlanco.png"  alt="logosena">
+      </label> 
+      <div class="logo">  	
+      <img  src="../img/LogoGrandeBlanco.png"  alt="logosena">
      </div>
       <div class="right_area">
-        <a th:href="@{/cerrar}" class="logout_btn btn btn-primary"><i class="fas fa-sign-out-alt"></i>Salir</a>
+        <a th:href="@{/cerrar}" class="logout_btn"><i class="fas fa-sign-out-alt"></i>Salir</a>
       </div>
     </header>
     <!--header area end-->
@@ -55,7 +56,7 @@
     </div>
     <!--sidebar end-->
     <div class="content">
-    <a th:href="@{/formulario/new}" class="btn btn-primary">Agregar</a>
+    <a th:href="@{/formulario/new}" class="btn btn-success">Agregar</a>
       <div class="card">
         
         <div class="table-responsive">
@@ -64,7 +65,7 @@
 				<tr>
 					
 					<th>DIA</th>	
-					<th>HORA LLEGADA</th>
+					<th>HORA SALIDA</th>
 					<th>APRENDIZ</th>
 					<th>NODO</th>				
 				</tr>

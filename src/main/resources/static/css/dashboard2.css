@@ -5,27 +5,31 @@ body{
   font-family: "Roboto", sans-serif;
   
 }
-
-header{
-  z-index: 1;
-  position: fixed;
-  background: #22242A;
-  padding: 2px;
-  width: calc(100% - 0%);
-  top: 0;
-  height: 80px;
-}
 .logo{
   margin-top:-15px;
   margin-left: 17px;
 }
-.logo img{
-  height: 60px;
-}
 
+header{
+  z-index: 1;
+  position: fixed;
+  background: #424242;
+  padding: 2px;
+  width: calc(100% - 0%);
+  top: 0;
+  height: 100px;
+}
+.logo img{
+height: auto;
+}
+.logo{
+  margin-top:-15px;
+  margin-left: 50px;
+}
 .logout_btn{
-  padding: 5px;
-  background: #19B3D3;
+  border-radius: 4px;
+  padding: 6px;
+  background: #57a957;
   text-decoration: none;
   float: right;
   margin-top: -45px;
@@ -43,14 +47,15 @@ header{
 }
 
 .logout_btn:hover{
-  background: #0B87A6;
+  background: #7CB342;
+  color: white;
 }
 
 .sidebar{
   z-index: 1;
   top: 0;
-  background: #2f323a;
-  margin-top: 80px;
+  background: #424242;
+  margin-top: 100px;
   padding-top: 30px;
   position: fixed;
   left: 0;
@@ -76,7 +81,7 @@ header{
 }
 
 .sidebar .profile_info h4{
-  color: #ccc;
+  color: #fff;
   margin-top: 0;
   margin-bottom: 20px;
 }
@@ -94,7 +99,7 @@ header{
 }
 
 .sidebar a:hover{
-  background: #19B3D3;
+  background: #57a957;
   color:white;
 }
 
@@ -107,15 +112,16 @@ label #sidebar_btn{
   color: #fff;
   position: fixed;
   cursor: pointer;
-  left: 300px;
+  left: 10px;
   font-size: 20px;
-  margin: 5px 0;
+  margin-top:15px;
+  margin-left: 7px;
   transition: 0.5s;
   transition-property: color;
 }
 
 label #sidebar_btn:hover{
-  color: #19B3D3;
+  color: #57a957;
 }
 
 #check:checked ~ .sidebar{
@@ -133,7 +139,7 @@ label #sidebar_btn:hover{
 }
 
 .content{
-	background-color:red;
+ background-color:red;
   width: (100% - 250px);
   margin-top: 90px;
   padding: 20px;
@@ -183,7 +189,7 @@ section{
         max-width: 7000px;
         width: 100%;
         position:relative;
-        background:#ffffff;
+        background:#fff;
         border-radius: 8px;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -202,7 +208,7 @@ section{
         bottom:0;
         height: 3px;
         width: 220px;
-        background: linear-gradient(135deg, #FFB74D ,#FF9800, #F57C00 );
+        background:#57a957;
     }
     .containers form .user-details{
         display: flex;
@@ -225,7 +231,8 @@ section{
      height: 45px;
      width: 100%;
      color: black;
-     border: 1px solid #FB8C00;
+     background: #DCEDC8;
+     border: 1px solid #57a957;
      outline: none;
      border-radius: 7px;
      font-size: 16px;
@@ -234,7 +241,8 @@ section{
     }
     .user-details .input-box input, select:focus,
     .user-details .input-box input, select:valid{
-        border-color: #FF9800;
+        border-color: #57a957;
+        background: #DCEDC8;
     }
     form .button{
         height: 45px;
@@ -250,10 +258,10 @@ section{
         font-size: 18px;
         font-weight: 500;
         letter-spacing: 1px;
-        background: linear-gradient(135deg, #FFA726, #FF9800, #FB8C00 );
+        background: #57a957;
     }
     form .button input:hover{
-        background: linear-gradient(-135deg, #FFA726, #FF9800, #FF9800 );
+        background: #57a957;
     }
     @media(max-width: 584px){
         .container{
@@ -325,11 +333,11 @@ section{
   }
 
   .nav_bar .nav_btn:hover{
-    color: #19B3D3;
+    color:#57a957;
   }
 
   .mobile_nav_items{
-    background: #2F323A;
+    background: #424242;
     display: none;
   }
 
@@ -346,7 +354,7 @@ section{
   }
 
   .mobile_nav_items a:hover{
-    background: #19B3D3;
+    background: #57a957;
   }
 
   .mobile_nav_items i{
@@ -366,11 +374,11 @@ section{
  		margin-right:10px;
  	}
  	.logo{
-	   margin-top:-15px;
-	   margin-left: 1px;
-	}
+  margin-top:-15px;
+  margin-left: 1px;
+   }
 	.logo img{
-	  height: 50px;
+	 width: 300px;
 	}
  }
  @media screen and (max-width: 322px){
