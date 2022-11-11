@@ -28,20 +28,25 @@ public class Formulario {
 	private Date dia = new Date(System.currentTimeMillis());
 	@Temporal(TemporalType.TIME)
 	private Date hora = new Date(System.currentTimeMillis());
+	private String jornada;
+	private String imagen;
 	
 	public Formulario() {
 		
 	}
 	
 
-	public Formulario(Integer id, Date dia, Date hora, List<Aprendiz> aprendices) {
+	public Formulario(Integer id, Date dia, Date hora, String jornada, String imagen, List<Aprendiz> aprendices) {
 		super();
 		this.id = id;
 		this.dia = dia;
 		this.hora = hora;
+		this.jornada = jornada;
+		this.imagen = imagen;
 		this.aprendices = aprendices;
 	}
 
+	
 
 	public Integer getId() {
 		return id;
@@ -73,6 +78,26 @@ public class Formulario {
 	}
 
 
+	public String getJornada() {
+		return jornada;
+	}
+
+
+	public void setJornada(String jornada) {
+		this.jornada = jornada;
+	}
+
+
+	public String getImagen() {
+		return imagen;
+	}
+
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+
 	public List<Aprendiz> getAprendices() {
 		return aprendices;
 	}
@@ -81,6 +106,7 @@ public class Formulario {
 	public void setAprendices(List<Aprendiz> aprendices) {
 		this.aprendices = aprendices;
 	}
+
 
 
 	@ManyToMany

@@ -24,7 +24,7 @@
       	<img  src="../img/LogoGrandeBlanco.png"  alt="logosena">
      </div>
       <div class="right_area">
-       <a th:href="@{/cerrar}" class="logout_btn btn btn-primary"><i class="fas fa-sign-out-alt"></i>Salir</a>
+        <a th:href="@{/cerrar}" class="logout_btn btn btn-primary"><i class="fas fa-sign-out-alt"></i>Salir</a>
       </div>
     </header>
     <!--header area end-->
@@ -55,73 +55,54 @@
     </div>
     <!--sidebar end-->
     <div class="content">
-     <a th:href="@{/aprendiz/new}" class="btn btn-primary">Agregar</a>
+    <a th:href="@{/formulario/new}" class="btn btn-primary">Agregar</a>
       <div class="card">
-       
+        
         <div class="table-responsive">
 		<table id="example" class="table table-striped table-bordered " style="width:100%">
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>NOMBRE</th>
-					<th>APELLIDO</th>
-					<th>PROGRAMA</th>
-					<th>FICHA</th>
-					<th>AREA</th>
-					<th>ESTADO</th>
-					<th>ACCIONES</th>
+					
+					<th>DIA</th>	
+					<th>HORA LLEGADA</th>
+					<th>APRENDIZ</th>
+					<th>NODO</th>				
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="aprendiz:${aprendices}">
-					<td th:text="${aprendiz.id}"></td>
-					<td th:text="${aprendiz.nombre}"></td>
-					<td th:text="${aprendiz.apellido}"></td>
-					<td th:text="${aprendiz.programa}"></td>
-					<td th:text="${aprendiz.ficha}"></td>
-					<td th:text="${aprendiz?.area?.nombre}"></td>
-					<td th:text="${aprendiz.estado}"></td>
-					<td>
-						<a th:href="@{/aprendiz/edit/} + ${aprendiz.id}" class="btn btn-warning">Editar</a>
-						
-						<!-- Button trigger modal -->
-						<button th:if="${aprendiz.estado == 'activo'}" type="button" class="btn btn-primary" data-bs-toggle="modal"  th:attr="data-bs-target='#exampleModal'+${aprendiz.id}">
-						  <i class="fas fa-times"></i>
-						</button>
-						<button th:if="${aprendiz.estado == 'inactivo'}" type="button" class="btn btn-primary" data-bs-toggle="modal"  th:attr="data-bs-target='#exampleModal'+${aprendiz.id}">
-						  <i class="fas fa-check"></i>
-						</button>
-					</td>
-					<!-- Modal -->
-					<div class="modal fade" th:attr="id='exampleModal'+${aprendiz.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					  <div class="modal-dialog">
-					    <div class="modal-content">
-					      <div class="modal-header">
-					        <h5 class="modal-title" id="exampleModalLabel">Advertencia</h5>
-					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					      </div>	
-					      <div class="modal-body">
-					      <span th:if="${aprendiz.estado == 'inactivo'}">¿Desea activar al aprendiz</span> <span th:if="${aprendiz.estado == 'inactivo'}" th:text="${aprendiz.nombre} + ' ' + ${aprendiz.apellido} + '?'"></span>
-					      <span th:if="${aprendiz.estado == 'activo'}">¿Desea inactivar al aprendiz</span> <span th:if="${aprendiz.estado == 'activo'}" th:text="${aprendiz.nombre} + ' ' + ${aprendiz.apellido} + '?'"></span>
-					      </div>
-					      <div class="modal-footer">
-					        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					        <span th:if="${aprendiz.estado == 'activo'}"><a th:href="@{/aprendiz/estadoAprendiz(id=${aprendiz.id})}" type="button" class="btn btn-danger">Inactivar</a></span>
-					        <span th:if="${aprendiz.estado == 'inactivo'}"><a th:href="@{/aprendiz/estadoAprendiz(id=${aprendiz.id})}" type="button" class="btn btn-success">Activar</a></span>
-					      </div>
-					    </div>
-					  </div>
-					</div>
+				<tr th:each="formulario:${formularios}" th:if="${formulario.jornada} == Salida">
+					<td th:text="${formulario.dia}"></td>
+					<td th:text="${formulario.hora}"></td>
+					 <td><div th:each="aprendicesItem: ${formulario.aprendices}"><div th:text="${aprendicesItem.nombre} + ' ' + ${aprendicesItem.apellido} "></div></div></td>
+					 <td><div th:each="aprendicesItem: ${formulario.aprendices}"><div th:text="${aprendicesItem.area?.nombre}"></div></div></td>
+					<td th:text="${formulario.jornada}"></td>
 				</tr>
 			</tbody>
 		</table>
 		</div>
       </div>
       <div class="card">
-        
+        <div th:each="usuario:${usuarios}">
+			<img class="card-img-top" th:src="@{/images/{img} (img=${usuario.imagen})} " alt="">
+		</div>
+      </div>
+      <div class="card">
+        <p>Lorem Ipsum is simply industry.</p>
       </div>
     </div>
-	
+
+    <script type="text/javascript">
+	    $(document).ready(function(){
+	      $('.nav_btn').click(function(){
+	        $('.mobile_nav_items').toggleClass('active');
+	      });
+	    });
+    </script>
+    
+	<!--<div th:include="dashboard/dashboard.html :: dashboard"></div>-->
+	<div class="container mt-4">
+		
+	</div>					
 </body>
 <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/bootstrap.js"></script>

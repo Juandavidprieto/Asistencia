@@ -36,6 +36,15 @@ public class FormularioController {
 		return "formulario/VistaFormulario";
 	}
 	
+	@GetMapping("/salida")
+	public String salida(Model model) {
+		List<Aprendiz>lstaprendiz=iaprendizService.listar();
+		model.addAttribute("lstaprendiz", lstaprendiz);
+		List<Formulario>formularios=iformularioService.listar();
+		model.addAttribute("formularios", formularios);
+		return "formulario/salida";
+	}
+	
 	@GetMapping("/new")
 	public String nuevoFormulario(Model model, Formulario formulario) {
 		List<Aprendiz>lstaprendiz=iaprendizService.listar();

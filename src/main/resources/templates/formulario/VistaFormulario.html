@@ -35,10 +35,10 @@
         <i class="fa fa-bars nav_btn"></i>
       </div>
       <div class="mobile_nav_items">
-        <a href="#"><i class="fas fa-cogs"></i><span>Cuenta</span></a>
-        <a th:href="@{/admin/listar}"><i class="fas fa-users"></i><span>Usuarios</span></a>
+         <a th:href="@{/admin/listar}"><i class="fas fa-users"></i><span>Usuarios</span></a>
         <a th:href="@{/aprendiz/listar}"><i class="fas fa-user-graduate"></i><span>Aprendices</span></a>
-        <a th:href="@{/formulario/listar}"><i class="fas fa-clipboard-list"></i><span>Asistencia</span></a>
+        <a th:href="@{/formulario/listar}"><i class="fas fa-clipboard-list"></i><span>Entradas</span></a>
+        <a th:href="@{/formulario/salida}"><i class="fas fa-clipboard-list"></i><span>Salidas</span></a>
       </div>
     </div>
     <!--mobile navigation bar end-->
@@ -48,10 +48,10 @@
         <img src="../img/user.png" class="profile_image" alt="">
         <h4>Admin</h4>
       </div>
-      	<a href="#"><i class="fas fa-cogs"></i><span>Cuenta</span></a>
         <a th:href="@{/admin/listar}"><i class="fas fa-users"></i><span>Usuarios</span></a>
         <a th:href="@{/aprendiz/listar}"><i class="fas fa-user-graduate"></i><span>Aprendices</span></a>
-        <a th:href="@{/formulario/listar}"><i class="fas fa-clipboard-list"></i><span>Asistencia</span></a>
+        <a th:href="@{/formulario/listar}"><i class="fas fa-clipboard-list"></i><span>Entradas</span></a>
+        <a th:href="@{/formulario/salida}"><i class="fas fa-clipboard-list"></i><span>Salidas</span></a>
     </div>
     <!--sidebar end-->
     <div class="content">
@@ -70,12 +70,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="formulario:${formularios}">
+				<tr th:each="formulario:${formularios}" th:if="${formulario.jornada} == Entrada">
 					<td th:text="${formulario.dia}"></td>
 					<td th:text="${formulario.hora}"></td>
 					 <td><div th:each="aprendicesItem: ${formulario.aprendices}"><div th:text="${aprendicesItem.nombre} + ' ' + ${aprendicesItem.apellido} "></div></div></td>
 					 <td><div th:each="aprendicesItem: ${formulario.aprendices}"><div th:text="${aprendicesItem.area?.nombre}"></div></div></td>
-					
+					<td th:text="${formulario.jornada}"></td>
 				</tr>
 			</tbody>
 		</table>
