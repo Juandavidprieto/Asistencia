@@ -57,12 +57,13 @@
     <!--sidebar end-->
     <div class="content">
      <a th:href="@{/aprendiz/new}" class="btn btn-success">Agregar</a>
-      <div class="card">
-       
+       <br>
+       <div class="card">
+      
         <div class="table-responsive">
-		<table id="example" class="table table-striped table-bordered " style="width:100%">
+		<table id="example" class="table table-striped table-bordered " style="width:100%; border: 1px solid #57a957;">
 			<thead>
-				<tr>
+				<tr style="background: #81C784;">
 					<th>ID</th>
 					<th>NOMBRE</th>
 					<th>APELLIDO</th>
@@ -83,7 +84,7 @@
 					<td th:text="${aprendiz?.area?.nombre}"></td>
 					<td th:text="${aprendiz.estado}"></td>
 					<td>
-						<a th:href="@{/aprendiz/edit/} + ${aprendiz.id}" class="btn btn-warning">Editar</a>
+						<a th:href="@{/aprendiz/edit/} + ${aprendiz.id}" class="btn btn-outline-success">Editar</a>
 						
 						<!-- Button trigger modal -->
 						<button th:if="${aprendiz.estado == 'activo'}" type="button" class="btn btn-primary" data-bs-toggle="modal"  th:attr="data-bs-target='#exampleModal'+${aprendiz.id}">

@@ -19,7 +19,8 @@ header{
 }
 .logo{
   margin-top:-15px;
-  margin-left: 50px;
+  margin-left: 70px;
+  margin-bottom: 0%;
 }
 .logout_btn{
   padding: 5px;
@@ -39,6 +40,7 @@ header{
 .logout_btn i{
  	 padding: 5px;
 }
+
 
 .logout_btn:hover{
   background: #7CB342;
@@ -106,7 +108,7 @@ label #sidebar_btn{
   color: #fff;
   position: fixed;
   cursor: pointer;
-  left: 10px;
+  left: 15px;
   font-size: 20px;
   margin-top:15px;
   margin-left: 7px;
@@ -250,21 +252,54 @@ label #sidebar_btn:hover{
 
   .active{
     display: block;
-  }
- @media screen and (max-width: 420px){
+  } @media screen and (max-width: 768px){
  	.logout_btn{
- 		margin-right:10px;
+ 		margin-right:20px;
  	}
+ 	.logo{
+  margin-top:-15px;
+  margin-left: 2px;
+  position:abosolute;
  }
-  @media screen and (max-width: 380px){
- 	.logout_btn{
+ .logo img{
+	 width:350px;
+	}
+		header{
+	height:75px;}
 
- 	    margin-top:0;
- 		margin-right:10px;
+ }
+ 
+ 
+ 
+ @media screen and (max-width: 425px){
+ 	.logout_btn{
+ 	    padding:1.5px;
+ 		margin-right:5px;
+ 		margin-top:10px;
  	}
  	.logo{
   margin-top:-15px;
   margin-left: 1px;
+  position:absolute;
+ }
+ .logo img{
+	 width:330px;
+	}
+		header{
+	height:75px;}
+ }
+ }
+
+  @media screen and (max-width: 375px){
+ 	.logout_btn{
+ 	    padding:1.5px;
+ 		margin-right:10px;
+ 		margin-top:10px;
+ 	}
+ 	.logo{
+  margin-top:-15px;
+  margin-left: 1px;
+  position: absolute;
 }
 	.logo img{
 	 width:315px;
@@ -273,12 +308,33 @@ label #sidebar_btn:hover{
   z-index: 1;
   margin-top: 100px;
 }
+	header{
+	height:75px;
+	}
+	table{
+	font-size:13px;}
  }
- @media screen and (max-width: 322px){
+
+ @media screen and (max-width: 320px){
  	.logout_btn i{
- 		 padding: 1px;
+ 		 padding: 1.5px;
  		 height: 5px;
+ 		 margin-top:6px;
+ 		 margin-right:6px;
  		
  	}
+ 	.logo{
+  margin-top:-15px;
+  margin-left: 1px;
+  position: absolute;}
+ 	.logo img{
+	 width:300px;
+	}
+	header{
+	height:75px;}
+	table{
+	font-size:10px;
+	}
  }
-}
+
+ 
