@@ -61,7 +61,7 @@ public class Admincontroller {
 	
 	@PostMapping("/save")
 	public String saveUsuario(@Validated int id, Usuario u,@RequestParam("img") MultipartFile file) throws IOException {
-		u.setPass(passEncode.encode(u.getPass()));
+		
 		//imagen
 				if (u.getId()==0) { // cuando se crea un producto
 					String nombreImagen= upload.saveImage(file);

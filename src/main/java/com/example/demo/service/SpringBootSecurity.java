@@ -26,9 +26,11 @@ public class SpringBootSecurity extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable().authorizeRequests()
 		.antMatchers("/admin/**").hasRole("ADMIN")
-		.antMatchers("/aprendiz/Formulario").hasRole("ADMIN")
-		.antMatchers("/aprendiz/vistaAprendiz").hasRole("ADMIN")
-		.antMatchers("/formulario/VistaFormulario").hasRole("ADMIN")
+		.antMatchers("/aprendiz/listar").hasRole("ADMIN")
+		.antMatchers("/aprendiz/new").hasRole("ADMIN")
+		.antMatchers("/aprendiz/edit/{id}").hasRole("ADMIN")
+		.antMatchers("/formulario/listar").hasRole("ADMIN")
+		.antMatchers("/formulario/salida").hasRole("ADMIN")
 		.and().formLogin().loginPage("/")
 		.permitAll().defaultSuccessUrl("/acceder");
 	}

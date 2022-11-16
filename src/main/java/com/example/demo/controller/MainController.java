@@ -16,7 +16,7 @@ public class MainController {
     @GetMapping("/qrg")
     public String getQRCode(Model model){
         String medium="https://rahul26021999.medium.com/";
-        String github="http://192.168.0.7:8080/formulario/new";
+        String github="http://192.168.0.10:8080/formulario/new";
 
         byte[] image = new byte[0];
         try {

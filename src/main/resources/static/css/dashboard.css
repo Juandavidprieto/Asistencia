@@ -166,7 +166,14 @@ label #sidebar_btn:hover{
   font-size: 14px;
   opacity: 0.8;
 }
-
+.imga{
+    border-radius: 50%;
+  	margin-right:-10px;
+  }
+  
+  .tde{
+    width:1px;
+  }
 /* Responsive CSS */
 
 @media screen and (max-width: 780px){

@@ -21,6 +21,7 @@ public class Aprendiz {
 	private String programa;
 	private int ficha;
 	private String estado;
+	private String imagen;
 	
 	public Aprendiz() {
 		
@@ -29,7 +30,7 @@ public class Aprendiz {
 	
 
 	public Aprendiz(int id, int documento, String nombre, String apellido, String programa, int ficha, String estado,
-			Area area) {
+			String imagen, Area area) {
 		super();
 		this.id = id;
 		this.documento = documento;
@@ -38,10 +39,11 @@ public class Aprendiz {
 		this.programa = programa;
 		this.ficha = ficha;
 		this.estado = estado;
+		this.imagen = imagen;
 		this.area = area;
 	}
 
-
+	
 
 	public int getId() {
 		return id;
@@ -127,6 +129,18 @@ public class Aprendiz {
 
 
 
+	public String getImagen() {
+		return imagen;
+	}
+
+
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+
+
 	public Area getArea() {
 		return area;
 	}
@@ -137,7 +151,7 @@ public class Aprendiz {
 		this.area = area;
 	}
 
-	
+
 
 	@Override
 	public String toString() {

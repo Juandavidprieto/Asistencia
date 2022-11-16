@@ -41,4 +41,10 @@ public class AprendizService implements IaprendizService{
 		
 	}
 
+	@Override
+	public void update(Aprendiz aprendiz) {
+		iaprendiz.save(aprendiz);
+		
+	}
+
 }

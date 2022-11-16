@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/formout.css}">
     <link rel="stylesheet" href="regis.css">
-    <title>CAPI</title>
+    <link rel="shortcut icon" th:href="@{/images/sv.png}" />
+    <title>Registro</title>
 </head>
 <body>
     <section>
@@ -16,12 +17,9 @@
     <div class="color"></div>
     <div class="container">
        <div class="tittle">Registro de usuario</Ri:a></div>
-          <form th:action="@{/aprendiz/guardar}" th:object="${aprendiz}" method="POST">
+          <form th:action="@{/aprendiz/guardar}" th:object="${aprendiz}" method="POST" enctype="multipart/form-data">
             <div class="user-details">
-                <div class="input-box">
-                    <span class="details">ID</span>
-                    <input th:field="*{id} " type="number" placeholder="Ingresa el nombre" required>
-                </div>
+                
                 <div class="input-box">
                     <span class="details">Nombre</span>
                     <input  th:field="*{nombre} " type="text" placeholder="Ingresa el nombre" required>
@@ -50,7 +48,15 @@
                         <option  th:each="areaItem : ${lstArea}"  th:value="${areaItem.id}" th:text="${areaItem.nombre}"></option>
                     </select>
                 </div>
-                
+                <div class="input-box">
+                    <span class="details">Imagen</span>
+                    <input type="file" class="form-control-file" id="img" name="img" style="display:none;">
+                     <label for="img">click para subir una imagen</label>
+                </div>
+                <div class="input-box" style="visibility: hidden">
+                    <span class="details">ID</span>
+                    <input th:field="*{id} " type="number" placeholder="Ingresa el nombre" required>
+                </div>
             </div>
             <div class="button">
                 <input type="submit" value="Guardar">

@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-<title>Crear Usuario</title>
+<link rel="shortcut icon" th:href="@{/images/sv.png}" />
+<title>Registro aprendiz</title>
 </head>
 <body>
  	<input type="checkbox" id="check">
@@ -23,7 +24,7 @@
       	<img  src="../img/LogoGrandeBlanco.png"  alt="logosena">
      </div>
       <div class="right_area">
-        <a th:href="@{/cerrar}" class="logout_btn">Salir</a>
+        <a th:href="@{/cerrar}" class="logout_btn btn btn-primary"><i class="fas fa-sign-out-alt"></i>Salir</a>
       </div>
     </header>
     <!--header area end-->
@@ -63,12 +64,8 @@
     <div class="color"></div>
     <div class="containers">
         <div class="tittle">Registro de usuario</Ri:a></div>
-          <form th:action="@{/aprendiz/save}" th:object="${aprendiz}" method="POST">
+          <form th:action="@{/aprendiz/save}" th:object="${aprendiz}" method="POST" enctype="multipart/form-data"	>
             <div class="user-details">
-                <div class="input-box">
-                    <span class="details">ID</span>
-                    <input th:field="*{id} " type="number" placeholder="Ingresa el nombre" required>
-                </div>
                 <div class="input-box">
                     <span class="details">Nombre</span>
                     <input  th:field="*{nombre} " type="text" placeholder="Ingresa el nombre" required>
@@ -97,7 +94,15 @@
                         <option  th:each="areaItem : ${lstArea}"  th:value="${areaItem.id}" th:text="${areaItem.nombre}"></option>
                     </select>
                 </div>
-                
+                <div class="input-box">
+                    <span class="details">Imagen</span>
+                    <input type="file" class="form-control-file" id="img" name="img" style="display:none;">
+                     <label for="img">click para subir una imagen</label>
+                </div>
+                <div class="input-box" style="visibility: hidden">
+                    <span class="details">ID</span>
+                    <input th:field="*{id} " type="number" placeholder="Ingresa el nombre" >
+                </div>
             </div>
             <div class="button">
                 <input type="submit" value="Guardar">
