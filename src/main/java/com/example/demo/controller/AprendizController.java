@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.example.demo.interfaceService.IusuarioService;
 import com.example.demo.interfaces.IArea;
 import com.example.demo.model.Aprendiz;
 import com.example.demo.model.Area;
@@ -36,15 +41,28 @@ public class AprendizController {
 	@Autowired
 	private UploadFileService upload;
 	
+	@Autowired
+	private IusuarioService service;
+	
+	private final Logger log= LoggerFactory.getLogger(Admincontroller.class);
+	
 	@GetMapping("/listar")
-	public String listarAprendiz(Model model) {
+	public String listarAprendiz(Model model, HttpSession session, Usuario usuario) {
+		log.info("sesion del usuario: {}", session.getAttribute("idusuario"));
+		List<Usuario>usuarios=service.listar();
+		model.addAttribute("usuarios", usuarios);
+		
 		List<Aprendiz>aprendices=aprendizService.listar();
 		model.addAttribute("aprendices", aprendices);
 		return "aprendiz/vistaAprendiz";
 	}
 	
 	@GetMapping("/new")
-	public String nuevoAprendiz(Model model) {
+	public String nuevoAprendiz(Model model,HttpSession session, Usuario usuario) {
+		log.info("sesion del usuario: {}", session.getAttribute("idusuario"));
+		List<Usuario>usuarios=service.listar();
+		model.addAttribute("usuarios", usuarios);
+		
 		List<Area>lstArea= (List<Area>)iArea.findAll();
 		model.addAttribute("lstArea", lstArea);
 		model.addAttribute("aprendiz", new Aprendiz());
@@ -96,7 +114,11 @@ public class AprendizController {
 	}
 	
 	@GetMapping("/edit/{id}")
-	public String editarAprendiz(@PathVariable int id, Model model) {
+	public String editarAprendiz(@PathVariable int id, Model model,HttpSession session, Usuario usuario) {
+		log.info("sesion del usuario: {}", session.getAttribute("idusuario"));
+		List<Usuario>usuarios=service.listar();
+		model.addAttribute("usuarios", usuarios);
+		
 		List<Area>lstArea= (List<Area>)iArea.findAll();
 		model.addAttribute("lstArea", lstArea);
 		Optional<Aprendiz>aprendiz=aprendizService.listarId(id);

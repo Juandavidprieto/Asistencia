@@ -16,26 +16,26 @@
 <body>
  	<input type="checkbox" id="check">
     <!--header area start-->
-    <header>
+    <header> 
       <label for="check">
         <i class="fas fa-bars" id="sidebar_btn"></i>
       </label>
       <div class="logo">
-      	<img  src="../img/LogoGrandeBlanco.png"  alt="logosena">
+       <img  src="../img/LogoGrandeBlanco.png"  alt="logosena">
      </div>
       <div class="right_area">
-        <a th:href="@{/cerrar}" class="logout_btn btn btn-primary"><i class="fas fa-sign-out-alt"></i>Salir</a>
+        <a th:href="@{/cerrar}" class="logout_btn"><i class="fas fa-sign-out-alt"></i>Salir</a>
       </div>
     </header>
     <!--header area end-->
     <!--mobile navigation bar start-->
     <div class="mobile_nav">
-      <div class="nav_bar">
-        <img  src="../img/user.png" class="mobile_profile_image" alt="">
+      <div class="nav_bar" th:each="usuario:${usuarios}" th:if="${usuario.id} == ${session.idusuario}">
+        <img class="mobile_profile_image" th:src="@{/images/{img} (img=${usuario.imagen})} ">
         <i class="fa fa-bars nav_btn"></i>
       </div>
       <div class="mobile_nav_items">
-        <a th:href="@{/admin/listar}"><i class="fas fa-users"></i><span>Usuarios</span></a>
+       <a th:href="@{/admin/listar}"><i class="fas fa-users"></i><span>Usuarios</span></a>
         <a th:href="@{/aprendiz/listar}"><i class="fas fa-user-graduate"></i><span>Aprendices</span></a>
         <a th:href="@{/formulario/listar}"><i class="fas fa-clipboard-list"></i><span>Entradas</span></a>
         <a th:href="@{/formulario/salida}"><i class="fas fa-clipboard-list"></i><span>Salidas</span></a>
@@ -44,8 +44,8 @@
     <!--mobile navigation bar end-->
     <!--sidebar start-->
     <div class="sidebar">
-      <div class="profile_info" >
-        <img src="../img/user.png" class="profile_image" alt="">
+      <div class="profile_info" th:each="usuario:${usuarios}" th:if="${usuario.id} == ${session.idusuario}">
+        <img class="profile_image" th:src="@{/images/{img} (img=${usuario.imagen})}">
         <h4>Admin</h4>
       </div>
       	<a th:href="@{/admin/listar}"><i class="fas fa-users"></i><span>Usuarios</span></a>
@@ -58,10 +58,6 @@
       <div class="card">
         
         <section>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
     <div class="containers">
         <div class="tittle">Registro de usuario</Ri:a></div>
           <form th:action="@{/admin/save}" th:object="${usuario}" method="POST" enctype="multipart/form-data">

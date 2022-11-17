@@ -44,16 +44,19 @@ public class Admincontroller {
 	
 	@GetMapping("/listar")
 	public String listarUsuario(Model model, HttpSession session, Usuario usuario) {
-		
-		
 		log.info("sesion del usuario: {}", session.getAttribute("idusuario"));
+		
 		List<Usuario>usuarios=service.listar();
 		model.addAttribute("usuarios", usuarios);
+		
 		return "admin/index";
 	}
 	
 	@GetMapping("/new")
-	public String agregarAdmin(Model model) {
+	public String agregarAdmin(Model model, HttpSession session, Usuario usuario) {
+		log.info("sesion del usuario: {}", session.getAttribute("idusuario"));
+		List<Usuario>usuarios=service.listar();
+		model.addAttribute("usuarios", usuarios);
 		model.addAttribute("usuario", new Usuario());
 		return "admin/form";
 		
@@ -61,7 +64,7 @@ public class Admincontroller {
 	
 	@PostMapping("/save")
 	public String saveUsuario(@Validated int id, Usuario u,@RequestParam("img") MultipartFile file) throws IOException {
-		
+		u.setPass( passEncode.encode(u.getPass()));
 		//imagen
 				if (u.getId()==0) { // cuando se crea un producto
 					String nombreImagen= upload.saveImage(file);
@@ -76,7 +79,10 @@ public class Admincontroller {
 	}
 	
 	@GetMapping("/editar/{id}")
-	public String editarAdmin (@PathVariable int id, Model model) {
+	public String editarAdmin (@PathVariable int id, Model model,HttpSession session, Usuario u) {
+		log.info("sesion del usuario: {}", session.getAttribute("idusuario"));
+		List<Usuario>usuarios=service.listar();
+		model.addAttribute("usuarios", usuarios);
 		Optional<Usuario>usuario=service.listarId(id);
 		model.addAttribute("usuario", usuario);
 		return "admin/update";

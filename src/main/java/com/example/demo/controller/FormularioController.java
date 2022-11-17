@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +17,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.interfaceService.IaprendizService;
 import com.example.demo.interfaceService.IformularioService;
+import com.example.demo.interfaceService.IusuarioService;
 import com.example.demo.model.Aprendiz;
 import com.example.demo.model.Formulario;
+import com.example.demo.model.Usuario;
 
 
 @Controller
@@ -27,9 +33,18 @@ public class FormularioController {
 	@Autowired
 	private IaprendizService iaprendizService;
 	
+	@Autowired
+	private IusuarioService service;
+	
+	private final Logger log= LoggerFactory.getLogger(Admincontroller.class);
+	
 	
 	@GetMapping("/listar")
-	public String listarFormulario(Model model) {
+	public String listarFormulario(Model model, HttpSession session, Usuario usuario) {
+		log.info("sesion del usuario: {}", session.getAttribute("idusuario"));
+		List<Usuario>usuarios=service.listar();
+		model.addAttribute("usuarios", usuarios);
+		
 		List<Aprendiz>lstaprendiz=iaprendizService.listar();
 		model.addAttribute("lstaprendiz", lstaprendiz);
 		List<Formulario>formularios=iformularioService.listar();
@@ -38,7 +53,11 @@ public class FormularioController {
 	}
 	
 	@GetMapping("/salida")
-	public String salida(Model model) {
+	public String salida(Model model, HttpSession session, Usuario usuario) {
+		log.info("sesion del usuario: {}", session.getAttribute("idusuario"));
+		List<Usuario>usuarios=service.listar();
+		model.addAttribute("usuarios", usuarios);
+		
 		List<Aprendiz>lstaprendiz=iaprendizService.listar();
 		model.addAttribute("lstaprendiz", lstaprendiz);
 		List<Formulario>formularios=iformularioService.listar();

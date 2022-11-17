@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" th:href="@{/css/login.css}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+<title>Registro asistencia</title>
+</head>
+<body>
+	<section>
+        
+            <div class="container">
+                <div class="form">
+                    <img src="logosena.png" alt="">
+                    <h2> ASISTENCIA</h2>
+                        <form th:action="@{/formulario/save}" th:object="${formulario}" method="POST">
+                            <div class="inputBox">
+                                <select class="form-control" th:field="*{aprendices}">
+                                   <option class="form-control"  th:each="aprendizItem : ${lstaprendiz}"  th:value="${aprendizItem.id}" th:text="${aprendizItem.nombre}"></option>
+                                </select>
+                            </div>
+                            <div class="inputBox">
+                                <select class="form-control" th:field="*{jornada}">
+                                	<option  value="Entrada">Entrada</option>
+                                	<option  value="Salida">Salida</option>
+                                </select>
+                            </div>
+                            <div class="inputBox">
+                                <input type="submit" placeholder="Ingresar" >
+                            </div>
+                        </form>
+                        <div class="forgot">
+                        <i class="fas fa-user"></i>
+                         <a th:href="@{/aprendiz/nuevo}">¿No estas registrado?</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
