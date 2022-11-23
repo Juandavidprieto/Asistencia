@@ -268,13 +268,26 @@ label #sidebar_btn:hover{
   margin-left: 2px;
   position:abosolute;
  }
- .logo img{
-	 width:350px;
-	}
 		header{
 	height:75px;}
 
  }
+   @media screen and (max-width: 584px){
+  
+  .logout_btn{
+ 		margin-right:10px;
+ 		margin-top: -35px;
+
+ 	}
+ 	.logo{
+  margin-top:-15px;
+  margin-left: 2px;
+  position:abosolute;
+ }
+ .logo img{
+	 width:360px;
+	}
+	}
  
  
  
@@ -302,11 +315,14 @@ label #sidebar_btn:hover{
  	    padding:1.5px;
  		margin-right:10px;
  		margin-top:10px;
+ 		position:relative;
+ 		z-index:4;
  	}
  	.logo{
   margin-top:-15px;
   margin-left: 1px;
   position: absolute;
+  z-index:1;
 }
 	.logo img{
 	 width:315px;
@@ -328,12 +344,17 @@ label #sidebar_btn:hover{
  		 height: 5px;
  		 margin-top:6px;
  		 margin-right:6px;
+ 		 position:relative;
+ 		 z-index:4;
  		
  	}
  	.logo{
   margin-top:-15px;
   margin-left: 1px;
-  position: absolute;}
+  position: absolute;
+   z-index:1;
+  }
+  
  	.logo img{
 	 width:300px;
 	}

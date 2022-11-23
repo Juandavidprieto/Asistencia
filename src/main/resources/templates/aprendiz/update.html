@@ -24,7 +24,7 @@
       	<img  src="../../img/LogoGrandeBlanco.png"  alt="logosena">
      </div>
       <div class="right_area">
-        <a th:href="@{/cerrar}" class="logout_btn btn btn-primary"><i class="fas fa-sign-out-alt"></i>Salir</a>
+        <a th:href="@{/cerrar}" class="logout_btn"><i class="fas fa-sign-out-alt"></i>Salir</a>
       </div>
     </header>
     <!--header area end-->
@@ -58,10 +58,6 @@
     
       <div class="card">
       	<section>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
-    <div class="color"></div>
     <div class="containers">
         <div class="tittle">Registro de usuario</Ri:a></div>
           <form th:action="@{/aprendiz/update}" th:object="${aprendiz}" method="POST" enctype="multipart/form-data"	>
@@ -104,7 +100,7 @@
                     <input th:field="*{id} " type="number" placeholder="Ingresa el nombre" required>
                 </div>
             </div>
-            <div class="button">
+            <div style="margin-top:0;"class="button">
                 <input type="submit" value="Guardar">
             </div>
         </form>

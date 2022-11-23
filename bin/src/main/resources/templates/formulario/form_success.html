@@ -8,19 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" th:href="@{/css/login.css}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
-<title>Crear Usuario</title>
+<link rel="shortcut icon" th:href="@{/images/sv.png}" />
+<title>Asistencia </title>
 </head>
 <body>
 	<section>
-        
             <div class="container">
                 <div class="form">
-                    <img src="logosena.png" alt="">
-                    <h2> ASISTENCIA</h2>
+                    <h2> Asistencia</h2>
                         <form th:action="@{/formulario/save}" th:object="${formulario}" method="POST">
                             <div class="inputBox">
                                 <select class="form-control" th:field="*{aprendices}">
                                    <option class="form-control"  th:each="aprendizItem : ${lstaprendiz}"  th:value="${aprendizItem.id}" th:text="${aprendizItem.nombre}"></option>
+                                </select>
+                            </div>
+                            <div class="inputBox">
+                                <select class="form-control" th:field="*{jornada}">
+                                	<option  value="Entrada">Entrada</option>
+                                	<option  value="Salida">Salida</option>
                                 </select>
                             </div>
                             <div class="inputBox">

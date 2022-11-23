@@ -2,7 +2,8 @@ body{
   margin: 0;
   padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
-	background-color:#FEFAF9;
+ background-color:#FEFAF9;
+ overflow:hidden;
 
 
 }
@@ -24,7 +25,7 @@ body{
 	
 	width: 300px;
 	height: 300px;
-	border: 10px solid #558B2F ;
+	border: 10px solid #57a957 ;
 	
 }
 .user img{
@@ -34,12 +35,153 @@ body{
 	
 }
 .qr {
-border-bottom: 3px solid #558B2F;
+border-bottom: 3px solid #57a957;
 
 }
 .qr h3{
-	font-size: 17.5px
+	font-size: 20px
+}
+.qs{
+	font-size: 19px
+}
+@media screen and (max-width: 780px){
+ 
+ 	.conta{
+	width:550px;
+	margin:7px;
+	}
+	
+	.user img{
+	width: 180px;
+	height: 180px;
+}
+.c img{
+	
+	width: 370px;
+	height: 370px;
+	border: 10px solid #57a957 ;
+	
+}
+.qs{
+	font-size: 21px
+}
+.qr h3{
+	font-size: 22px;
+}
+  @media screen and (max-width: 768px){
+ 	.conta{
+	width:530px;
+	margin:8px;
+	}
+	
+	.user img{
+	width: 170px;
+	height: 170px;
+}
+.c img{
+	
+	width: 350px;
+	height: 350px;
+	border: 10px solid #57a957 ;
+	
 }
 .qs{
 	font-size: 20px
+}
+.qr h3{
+	font-size: 21px;
+}
+ }
+ @media screen and (max-width: 584px){
+ 	.conta{
+	width:426px;
+	margin:5px;
+	}
+	
+	.user img{
+	width: 125px;
+	height: 125px;
+}
+.c img{
+	
+	width: 300px;
+	height: 300px;
+	border: 10px solid #57a957 ;
+	
+}
+.qs{
+	font-size: 19px
+}
+.qr h3{
+	font-size: 20px;
+}
+ }
+
+ }
+ @media screen and (max-width: 425px){
+ 	.conta{
+	width:385px;
+	margin:5px;
+	}
+	
+	.user img{
+	width: 130px;
+	height: 130px;
+}
+.c img{
+	
+	width: 310px;
+	height: 310px;
+	border: 10px solid #57a957 ;
+	
+}
+.qs{
+	font-size: 16px
+}
+.qr h3{
+	font-size: 17px;
+}
+ }
+ 
+ @media screen and (max-width: 375px){
+ 	.conta{
+	width:355px;
+	margin:5px;
+	}
+	
+	.user img{
+	width: 110px;
+	height: 110px;
+}
+.c img{
+	
+	width: 280px;
+	height: 280px;
+	border: 10px solid #57a957 ;
+	
+}
+.qs{
+	font-size: 14px
+}
+ }
+@media screen and (max-width: 320px){
+	.conta{
+	width:310px;
+	margin:2px;
+	}
+	
+	.user img{
+	width: 100px;
+	height: 100px;
+}
+.c img{
+	
+	width: 270px;
+	height: 270px;
+	border: 10px solid #57a957 ;
+	
+}
+.qs{
+	font-size: 14px
+}
 }

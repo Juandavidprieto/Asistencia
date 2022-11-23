@@ -11,31 +11,33 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
-<title>Crear Usuario</title>
+<link rel="shortcut icon" th:href="@{/images/sv.png}" />
+<title>Salidas</title>
 </head>
 <body>
  	<input type="checkbox" id="check">
     <!--header area start-->
     <header>
+   
       <label for="check">
         <i class="fas fa-bars" id="sidebar_btn"></i>
-      </label>
-      <div class="logo">
-      	<img  src="../img/LogoGrandeBlanco.png"  alt="logosena">
+      </label> 
+      <div class="logo">  	
+      <img  src="../img/LogoGrandeBlanco.png"  alt="logosena">
      </div>
       <div class="right_area">
-        <a th:href="@{/cerrar}" class="logout_btn btn btn-primary"><i class="fas fa-sign-out-alt"></i>Salir</a>
+        <a th:href="@{/cerrar}" class="logout_btn"><i class="fas fa-sign-out-alt"></i>Salir</a>
       </div>
     </header>
     <!--header area end-->
     <!--mobile navigation bar start-->
     <div class="mobile_nav">
-      <div class="nav_bar">
-        <img  src="../img/user.png" class="mobile_profile_image" alt="">
+      <div class="nav_bar" th:each="usuario:${usuarios}" th:if="${usuario.id} == ${session.idusuario}">
+        <img class="mobile_profile_image" th:src="@{/images/{img} (img=${usuario.imagen})} ">
         <i class="fa fa-bars nav_btn"></i>
       </div>
       <div class="mobile_nav_items">
-        <a th:href="@{/admin/listar}"><i class="fas fa-users"></i><span>Usuarios</span></a>
+       <a th:href="@{/admin/listar}"><i class="fas fa-users"></i><span>Usuarios</span></a>
         <a th:href="@{/aprendiz/listar}"><i class="fas fa-user-graduate"></i><span>Aprendices</span></a>
         <a th:href="@{/formulario/listar}"><i class="fas fa-clipboard-list"></i><span>Entradas</span></a>
         <a th:href="@{/formulario/salida}"><i class="fas fa-clipboard-list"></i><span>Salidas</span></a>
@@ -44,8 +46,8 @@
     <!--mobile navigation bar end-->
     <!--sidebar start-->
     <div class="sidebar">
-      <div class="profile_info" >
-        <img src="../img/user.png" class="profile_image" alt="">
+      <div class="profile_info" th:each="usuario:${usuarios}" th:if="${usuario.id} == ${session.idusuario}">
+        <img class="profile_image" th:src="@{/images/{img} (img=${usuario.imagen})}">
         <h4>Admin</h4>
       </div>
       	<a th:href="@{/admin/listar}"><i class="fas fa-users"></i><span>Usuarios</span></a>
@@ -55,39 +57,35 @@
     </div>
     <!--sidebar end-->
     <div class="content">
-    <a th:href="@{/formulario/new}" class="btn btn-primary">Agregar</a>
+    <a th:href="@{/formulario/new}" class="btn btn-success">Agregar</a>
       <div class="card">
         
         <div class="table-responsive">
-		<table id="example" class="table table-striped table-bordered " style="width:100%">
+		<table id="example" class="table table-striped table-bordered " style="width:100%; border: 1px solid #57a957">
 			<thead>
-				<tr>
+				<tr style="background: #81C784;">
 					
 					<th>DIA</th>	
-					<th>HORA LLEGADA</th>
+					<th>HORA SALIDA</th>
 					<th>APRENDIZ</th>
 					<th>NODO</th>				
 				</tr>
 			</thead>
-			<tbody>
+			<tbody >
 				<tr th:each="formulario:${formularios}" th:if="${formulario.jornada} == Salida">
 					<td th:text="${formulario.dia}"></td>
 					<td th:text="${formulario.hora}"></td>
 					 <td><div th:each="aprendicesItem: ${formulario.aprendices}"><div th:text="${aprendicesItem.nombre} + ' ' + ${aprendicesItem.apellido} "></div></div></td>
 					 <td><div th:each="aprendicesItem: ${formulario.aprendices}"><div th:text="${aprendicesItem.area?.nombre}"></div></div></td>
-					<td th:text="${formulario.jornada}"></td>
+					
 				</tr>
 			</tbody>
 		</table>
 		</div>
       </div>
+      
       <div class="card">
-        <div th:each="usuario:${usuarios}">
-			<img class="card-img-top" th:src="@{/images/{img} (img=${usuario.imagen})} " alt="">
-		</div>
-      </div>
-      <div class="card">
-        <p>Lorem Ipsum is simply industry.</p>
+        
       </div>
     </div>
 

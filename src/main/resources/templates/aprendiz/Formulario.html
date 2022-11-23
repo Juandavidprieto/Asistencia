@@ -25,7 +25,7 @@
       <img  src="../img/LogoGrandeBlanco.png"  alt="logosena">
      </div>
       <div class="right_area">
-        <a th:href="@{/cerrar}" class="logout_btn btn btn-primary"><i class="fas fa-sign-out-alt"></i>Salir</a>
+        <a th:href="@{/cerrar}" class="logout_btn"><i class="fas fa-sign-out-alt"></i>Salir</a>
       </div>
     </header>
     <!--header area end-->
@@ -101,7 +101,7 @@
                     <input th:field="*{id} " type="number" placeholder="Ingresa el nombre" >
                 </div>
             </div>
-            <div class="button">
+            <div style="margin-top:0;" class="button">
                 <input type="submit" value="Guardar">
             </div>
         </form>

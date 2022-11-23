@@ -8,23 +8,23 @@ body{
 header{
   z-index: 1;
   position: fixed;
-  background: #22242A;
+  background: #424242;
   padding: 2px;
   width: calc(100% - 0%);
   top: 0;
-  height: 80px;
+  height: 100px;
+}
+.logo img{
+ width: auto;
 }
 .logo{
   margin-top:-15px;
-  margin-left: 17px;
+  margin-left: 70px;
+  margin-bottom: 0%;
 }
-.logo img{
-  height: 60px;
-}
-
 .logout_btn{
   padding: 5px;
-  background: #19B3D3;
+  background: #57a957;
   text-decoration: none;
   float: right;
   margin-top: -45px;
@@ -41,15 +41,17 @@ header{
  	 padding: 5px;
 }
 
+
 .logout_btn:hover{
-  background: #0B87A6;
+  background: #7CB342;
+  color: white;
 }
 
 .sidebar{
   z-index: 1;
   top: 0;
-  background: #2f323a;
-  margin-top: 80px;
+  background: #424242;
+  margin-top: 100px;
   padding-top: 30px;
   position: fixed;
   left: 0;
@@ -75,7 +77,7 @@ header{
 }
 
 .sidebar .profile_info h4{
-  color: #ccc;
+  color: #fff;
   margin-top: 0;
   margin-bottom: 20px;
 }
@@ -93,7 +95,7 @@ header{
 }
 
 .sidebar a:hover{
-  background: #19B3D3;
+  background: #57a957;
   color:white;
 }
 
@@ -106,15 +108,16 @@ label #sidebar_btn{
   color: #fff;
   position: fixed;
   cursor: pointer;
-  left: 300px;
+  left: 15px;
   font-size: 20px;
-  margin: 5px 0;
+  margin-top:15px;
+  margin-left: 7px;
   transition: 0.5s;
   transition-property: color;
 }
 
 label #sidebar_btn:hover{
-  color: #19B3D3;
+  color: #57a957;
 }
 
 #check:checked ~ .sidebar{
@@ -166,7 +169,14 @@ label #sidebar_btn:hover{
   font-size: 14px;
   opacity: 0.8;
 }
-
+.imga{
+    border-radius: 50%;
+  	margin-right:-10px;
+  }
+  
+  .tde{
+    width:1px;
+  }
 /* Responsive CSS */
 
 @media screen and (max-width: 780px){
@@ -195,7 +205,7 @@ label #sidebar_btn:hover{
   }
 
   .nav_bar{
-    background: #222;
+    background: #424242;
     width: (100% - 0px);
     margin-top: 70px;
     display: flex;
@@ -219,11 +229,11 @@ label #sidebar_btn:hover{
   }
 
   .nav_bar .nav_btn:hover{
-    color: #19B3D3;
+    color:#57a957;
   }
 
   .mobile_nav_items{
-    background: #2F323A;
+    background: #424242;
     display: none;
   }
 
@@ -240,7 +250,7 @@ label #sidebar_btn:hover{
   }
 
   .mobile_nav_items a:hover{
-    background: #19B3D3;
+    background:#57a957;
   }
 
   .mobile_nav_items i{
@@ -249,29 +259,89 @@ label #sidebar_btn:hover{
 
   .active{
     display: block;
-  }
- @media screen and (max-width: 420px){
+  } @media screen and (max-width: 768px){
  	.logout_btn{
- 		margin-right:10px;
- 	}
- }
-  @media screen and (max-width: 380px){
- 	.logout_btn{
- 		margin-right:10px;
+ 		margin-right:20px;
  	}
  	.logo{
-	   margin-top:-15px;
-	   margin-left: 1px;
-	}
-	.logo img{
-	  height: 50px;
-	}
+  margin-top:-15px;
+  margin-left: 2px;
+  position:abosolute;
  }
- @media screen and (max-width: 322px){
+ .logo img{
+	 width:350px;
+	}
+		header{
+	height:75px;}
+
+ }
+ 
+ 
+ 
+ @media screen and (max-width: 425px){
+ 	.logout_btn{
+ 	    padding:1.5px;
+ 		margin-right:5px;
+ 		margin-top:10px;
+ 	}
+ 	.logo{
+  margin-top:-15px;
+  margin-left: 1px;
+  position:absolute;
+ }
+ .logo img{
+	 width:330px;
+	}
+		header{
+	height:75px;}
+ }
+ }
+
+  @media screen and (max-width: 375px){
+ 	.logout_btn{
+ 	    padding:1.5px;
+ 		margin-right:10px;
+ 		margin-top:10px;
+ 	}
+ 	.logo{
+  margin-top:-15px;
+  margin-left: 1px;
+  position: absolute;
+}
+	.logo img{
+	 width:315px;
+	}
+	.sidebar{
+  z-index: 1;
+  margin-top: 100px;
+}
+	header{
+	height:75px;
+	}
+	table{
+	font-size:13px;}
+ }
+
+ @media screen and (max-width: 320px){
  	.logout_btn i{
- 		 padding: 1px;
+ 		 padding: 1.5px;
  		 height: 5px;
+ 		 margin-top:6px;
+ 		 margin-right:6px;
  		
  	}
+ 	.logo{
+  margin-top:-15px;
+  margin-left: 1px;
+  position: absolute;}
+ 	.logo img{
+	 width:300px;
+	}
+	header{
+	height:75px;}
+	table{
+	font-size:10px;
+	}
  }
-}
+
+ 
